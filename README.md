@@ -6,6 +6,8 @@ Built as an Angular learning project using standalone components and signals.
 
 **Live demo:** https://kaylin98.github.io/Investment-Calculator/
 
+![screenshot](./screenshot.png)
+
 ## Features
 
 - Input form for initial investment, annual investment, expected return (%), and duration (years)
