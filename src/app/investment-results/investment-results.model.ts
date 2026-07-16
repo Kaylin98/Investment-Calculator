@@ -1,4 +1,4 @@
-export interface InvestmentResults{
+export interface InvestmentResult{
     year: number,
     interest: number,
     valueEndOfYear: number,
