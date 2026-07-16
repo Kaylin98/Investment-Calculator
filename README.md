@@ -1,27 +1,77 @@
-# EssentialsPractice
+# Investment Calculator
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 18.0.0-next.2.
+A simple Angular app that projects the growth of an investment over time. Enter an initial investment, annual contribution, expected return rate, and duration, and the app calculates a year-by-year breakdown of interest earned, total interest, and total amount invested.
 
-## Development server
+Built as an Angular learning project using standalone components and signals.
 
-Run `ng serve` for a dev server. Navigate to `http://localhost:4200/`. The application will automatically reload if you change any of the source files.
+**Live demo:** https://kaylin98.github.io/Investment-Calculator/
 
-## Code scaffolding
+## Features
 
-Run `ng generate component component-name` to generate a new component. You can also use `ng generate directive|pipe|service|class|guard|interface|enum|module`.
+- Input form for initial investment, annual investment, expected return (%), and duration (years)
+- Year-by-year results table showing:
+  - Interest earned that year
+  - Total interest earned to date
+  - Total amount invested
+  - Investment value at year end
+- Reactive state management via Angular signals (`InvestmentService`)
 
-## Build
+## Tech Stack
 
-Run `ng build` to build the project. The build artifacts will be stored in the `dist/` directory.
+- [Angular](https://angular.io/) 18 (standalone components, signals)
+- TypeScript
+- Karma / Jasmine for unit tests
 
-## Running unit tests
+## Getting Started
 
-Run `ng test` to execute the unit tests via [Karma](https://karma-runner.github.io).
+### Prerequisites
 
-## Running end-to-end tests
+- [Node.js](https://nodejs.org/) and npm
+- [Angular CLI](https://angular.io/cli) (`npm install -g @angular/cli`)
 
-Run `ng e2e` to execute the end-to-end tests via a platform of your choice. To use this command, you need to first add a package that implements end-to-end testing capabilities.
+### Install dependencies
 
-## Further help
+```bash
+npm install
+```
 
-To get more help on the Angular CLI use `ng help` or go check out the [Angular CLI Overview and Command Reference](https://angular.io/cli) page.
+### Development server
+
+```bash
+npm start
+```
+
+Navigate to `http://localhost:4200/`. The app will automatically reload if you change any of the source files.
+
+### Build
+
+```bash
+npm run build
+```
+
+Build artifacts are stored in the `dist/` directory.
+
+### Running unit tests
+
+```bash
+npm test
+```
+
+Runs unit tests via [Karma](https://karma-runner.github.io).
+
+## Project Structure
+
+```
+src/app/
+├── header/                  # App header component
+├── user-input/              # Form for entering investment parameters
+├── investment-results/      # Table displaying calculated results
+├── investment.service.ts    # Calculation logic and shared state (signals)
+└── investment-input.model.ts
+```
+
+## How It Works
+
+1. `UserInputComponent` collects the initial investment, annual investment, expected return, and duration.
+2. On submit, it calls `InvestmentService.CalculateInvestmentResults()`, which computes compounding growth year by year.
+3. Results are stored in a signal and rendered by `InvestmentResultsComponent`.
