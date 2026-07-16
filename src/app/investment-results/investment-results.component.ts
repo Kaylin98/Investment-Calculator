@@ -1,5 +1,4 @@
 import { Component, computed, input } from '@angular/core';
-import { InvestmentResult } from './investment-results.model';
 import { CurrencyPipe } from '@angular/common';
 import { InvestmentService } from '../investment.service';
 
